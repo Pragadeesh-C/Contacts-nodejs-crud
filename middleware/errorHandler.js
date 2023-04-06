@@ -13,7 +13,7 @@ const errorHandler = (err, req, res, next) => {
             res.json({
                 title: "Not Found",
                 message: err.message,
-                stackTrace: err.stack
+                // stackTrace: err.stack
             })
         case constants.UNAUTHORIZED:
             res.json({
@@ -36,6 +36,7 @@ const errorHandler = (err, req, res, next) => {
 
 
         default:
+            console.log(statusCode)
             console.log("No Error All Good")
             break;
     }
